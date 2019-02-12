@@ -38,9 +38,18 @@ public class BoxCollider extends Component{
 				if(haveCollision(p.getBounds(), o.getBounds())) {
 					
 					
+					// box collider also handles the seperate platform types. this mighjt be able to be split pup
+					// into mutiple functions but for now, this works.
+					
 					if((p.oldPos.x <= o.position.x - p.width) 
 							) {
 						
+						
+						if(o.movable) {
+							p.velocity.x *= 0;
+							o.position.x = p.position.x + p.width;
+						
+						}
 						p.position.x = o.position.x - p.width;
 						p.velocity.x *= 0;
 						
@@ -60,7 +69,7 @@ public class BoxCollider extends Component{
 						p.position.y = o.position.y - p.height;
 						if(o.isSpringy) {
 							
-							p.velocity.y *= -0.9;
+							p.velocity.y *= -0.7;
 						}
 						else {
 						

@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.samuelmiddendorp.engine.entities.obstacles.MoveablePlatform;
 import com.samuelmiddendorp.engine.entities.obstacles.Obstacle;
 import com.samuelmiddendorp.engine.entities.obstacles.Platform;
 import com.samuelmiddendorp.engine.entities.obstacles.SpringyPlatform;
@@ -43,10 +44,11 @@ public class GameState extends State {
 		obstacles = new ArrayList<Obstacle>();
 		obstacles.add(new Platform(500,200,200,50,game));
 		obstacles.add(new Platform(0,450,50,200,game));
-		obstacles.add(new Platform(100,450,50,200,game));
+		obstacles.add(new SpringyPlatform(100,450,50,200,game));
 		obstacles.add(new Platform(200,450,50,200,game));
 		obstacles.add(new Platform(300,450,50,200,game));
 		obstacles.add(new Platform(400,380,50,200,game));
+		obstacles.add(new MoveablePlatform(600,450,50,50,game));
 		entities = new ArrayList<Entity>(); 
 		entities.add(player);
 		//entities.add(random2);

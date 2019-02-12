@@ -7,6 +7,8 @@ public abstract class Obstacle extends Entity{
 
 	public boolean isSpringy;
 	
+	public boolean movable;
+	
 	public Obstacle(float x, float y, Game game) {
 		super(x,y,game);
 		
