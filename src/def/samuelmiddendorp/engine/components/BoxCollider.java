@@ -33,27 +33,29 @@ public class BoxCollider extends Component{
 	public void tick() {
 		// TODO Auto-generated method stub
 		for(Obstacle o: obs) {
-			// general bounds using priori.
+			// general bounds using postori.
 			// plz refactor this at some point
 				if(haveCollision(p.getBounds(), o.getBounds())) {
 					
 					
 					if((p.oldPos.x <= o.position.x - p.width) 
 							) {
-						System.out.print("Jaas links");
+						
 						p.position.x = o.position.x - p.width;
 						p.velocity.x *= 0;
 						
 					}
+					
 					else if((p.oldPos.x >= o.position.x + o.width) 
 							) {
-						System.out.print("Jaas rechts");
+						
 						p.position.x = o.position.x + o.width;
 						p.velocity.x *= 0;
 						
 					}
+					
 					else if((p.oldPos.y <= o.position.y -p.height)) {
-						System.out.print("Jaas boven");
+						
 						p.onGround = true;
 						p.position.y = o.position.y - p.height;
 						if(o.isSpringy) {
@@ -65,31 +67,14 @@ public class BoxCollider extends Component{
 							p.velocity.y *= 0;
 						}
 					}
+					
 					else if((p.oldPos.y >= o.position.y + o.height)) {
-						System.out.print("Jaas onder");
+					
 						p.position.y = o.position.y + o.height;
 						p.velocity.y *= 0;
 						
 					}
 					
-					/*else if((p.oldPos.x >= o.position.x ) 
-							) {
-						
-						p.position.x = o.position.x + o.width;
-						
-					}
-					else if((p.oldPos.y >= o.position.y ) 
-							) {
-						
-						p.position.y = o.position.y - p.height;
-						
-					}
-					else if((p.oldPos.y <= o.position.y) 
-							) {
-						
-						p.position.y = o.position.y + o.height;
-						
-					}*/
 					
 					
 				}
