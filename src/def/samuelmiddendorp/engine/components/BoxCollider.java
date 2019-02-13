@@ -44,22 +44,27 @@ public class BoxCollider extends Component{
 					if((p.oldPos.x <= o.position.x - p.width) 
 							) {
 						
-						
+						p.velocity.x *= 0;
 						if(o.movable) {
-							p.velocity.x *= 0;
+							
 							o.position.x = p.position.x + p.width;
 						
 						}
 						p.position.x = o.position.x - p.width;
-						p.velocity.x *= 0;
 						
 					}
 					
 					else if((p.oldPos.x >= o.position.x + o.width) 
 							) {
 						
-						p.position.x = o.position.x + o.width;
 						p.velocity.x *= 0;
+							if(o.movable) {
+							
+							o.position.x = p.position.x - o.width;
+						
+						}
+						p.position.x = o.position.x + o.width;
+						
 						
 					}
 					
