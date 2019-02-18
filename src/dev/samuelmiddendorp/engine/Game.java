@@ -58,10 +58,9 @@ public class Game implements Runnable {
 			return;
 		}
 		g = bs.getDrawGraphics();
-		//Draw Here!
+		
 		g.clearRect(0, 0, width, height);
 		
-		//End Drawing!'
 		if(State.getState() != null) {
 			State.getState().render(g);
 		}
@@ -73,8 +72,7 @@ public class Game implements Runnable {
 	public void run(){
 		
 		init();
-		
-init();
+	
 		
 		int fps = 60;
 		double timePerTick = 1000000000 / fps;

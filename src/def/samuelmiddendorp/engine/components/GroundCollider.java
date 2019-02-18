@@ -24,9 +24,9 @@ public class GroundCollider extends Component{
 		else {
 			e.onGround = false;
 		}*/
-			if((e.position.y + e.velocity.y) >= (500 - e.height)) {
+			if((e.position.y + e.velocity.y) >= (472 - e.height)) {
 				e.onGround = true;
-				e.position.y = (500 - e.height);
+				e.position.y = (472 - e.height);
 			}
 			else {
 				e.onGround = false;
