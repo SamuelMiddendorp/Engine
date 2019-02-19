@@ -61,10 +61,10 @@ public class Player extends Creature {
 		
 		
 		if(keymanager.right) {
-			force.addForce(new Vector2(4,0));
+			force.addForce(new Vector2(2,0));
 		}
 		if(keymanager.left) {
-			force.addForce(new Vector2(-4,0));
+			force.addForce(new Vector2(-2,0));
 		}
 		if(keymanager.up) {
 			jump();

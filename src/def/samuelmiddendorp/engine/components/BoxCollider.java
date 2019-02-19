@@ -37,13 +37,12 @@ public class BoxCollider extends Component{
 			// plz refactor this at some point
 				if(haveCollision(p.getBounds(), o.getBounds())) {
 					
-					
+					System.out.println("Collision");
 					// box collider also handles the seperate platform types. this mighjt be able to be split pup
 					// into mutiple functions but for now, this works.
 					
 					if((p.oldPos.x <= o.position.x - p.width) 
 							) {
-						
 						p.velocity.x *= 0;
 						if(o.movable) {
 							

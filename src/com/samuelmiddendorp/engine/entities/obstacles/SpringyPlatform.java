@@ -3,12 +3,14 @@ package com.samuelmiddendorp.engine.entities.obstacles;
 import java.awt.Color;
 import java.awt.Graphics;
 
+import com.samuelmiddendorp.engine.camera.Camera;
+
 import dev.samuelmiddendorp.engine.Game;
 
 public class SpringyPlatform extends Platform{
 
-	public SpringyPlatform(float x, float y, int w, int h, Game game) {
-		super(x,y,w,h,game);
+	public SpringyPlatform(float x, float y, int w, int h, Game game, Camera ca) {
+		super(x,y,w,h,game,ca);
 		
 		width = w;
 		height = h;
