@@ -26,7 +26,7 @@ public class Camera {
 	
 	public void tick() {		
 		
-		velocity = player.velocity;
+		//velocity = player.velocity;
 		
 	}
 	
