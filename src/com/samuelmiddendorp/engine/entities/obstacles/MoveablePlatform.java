@@ -3,14 +3,14 @@ package com.samuelmiddendorp.engine.entities.obstacles;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import com.samuelmiddendorp.engine.camera.Camera;
+
 
 import dev.samuelmiddendorp.engine.Game;
 
 public class MoveablePlatform extends Platform{
 
-	public MoveablePlatform(float x, float y, int w, int h, Game game, Camera ca) {
-		super(x, y, w, h, game, ca);
+	public MoveablePlatform(float x, float y, int w, int h, Game game) {
+		super(x, y, w, h, game);
 		// TODO Auto-generated constructor stub
 		
 		movable = true;
