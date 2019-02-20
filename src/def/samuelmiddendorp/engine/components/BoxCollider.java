@@ -65,6 +65,7 @@ public class BoxCollider extends Component{
 						p.position.x = o.position.x + o.width;
 						
 						
+						
 					}
 					
 					else if((p.oldPos.y <= o.position.y -p.height)) {

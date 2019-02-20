@@ -11,15 +11,13 @@ import com.samuelmiddendorp.engine.entities.obstacles.Obstacle;
 import com.samuelmiddendorp.engine.entities.obstacles.Platform;
 import com.samuelmiddendorp.engine.entities.obstacles.SpringyPlatform;
 
-import def.samuelmiddendorp.engine.components.GroundCollider;
 import def.samuelmiddendorp.engine.components.BoxCollider;
-import def.samuelmiddendorp.engine.components.Component;
-import def.samuelmiddendorp.engine.components.Force;
+import def.samuelmiddendorp.engine.components.GroundCollider;
 import dev.samuelmiddendorp.engine.Game;
 import dev.samuelmiddendorp.engine.entitites.Entity;
 import dev.samuelmiddendorp.engine.entitites.creatures.Player;
 import dev.samuelmiddendorp.engine.entitites.creatures.RandomObject;
-import dev.samuelmiddendorp.engine.gfx.Assets;
+import dev.samuelmiddendorp.engine.gfx.Camera;
 import dev.samuelmiddendorp.engine.gfx.ImageLoader;
 
 public class GameState extends State {
@@ -41,6 +39,8 @@ public class GameState extends State {
 	private List<Entity> entities;
 	
 	private List<Obstacle> obstacles;
+	
+	private Camera camera;
 
 	
 	public GameState(Game game) {
@@ -49,14 +49,15 @@ public class GameState extends State {
 		this.game = game;
 		
 		player = new Player(100,450, game);
+		camera  = new Camera(game, player);
 		obstacles = new ArrayList<Obstacle>();
 		obstacles.add(new Platform(500,200,200,50,game));
-		//obstacles.add(new Platform(0,450,50,200,game));
-		//obstacles.add(new SpringyPlatform(100,450,50,200,game));
+		obstacles.add(new Platform(0,450,50,200,game));
+		obstacles.add(new SpringyPlatform(100,450,50,200,game));
 		//obstacles.add(new Platform(200,450,50,200,game));
 		//obstacles.add(new Platform(300,450,50,200,game));
 		//obstacles.add(new Platform(400,380,50,200,game));
-		obstacles.add(new MoveablePlatform(600,350,50,50,game));
+		obstacles.add(new MoveablePlatform(600,200,50,50,game, camera));
 
 		entities = new ArrayList<Entity>(); 
 		
@@ -71,6 +72,7 @@ public class GameState extends State {
 	}
 
 	public void tick() {
+		camera.tick();
 		for(Entity e: entities) {
 			e.tick();
 		}
